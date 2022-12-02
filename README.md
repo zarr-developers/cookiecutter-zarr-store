@@ -25,7 +25,7 @@ For remaining questions use the value indicated in the `[ ]`. These are the defa
 
 ### Testing the code
 
-Before running tests make sure to install `pytest` via `pip install pytest`
+Before running the tests,  install `pytest` via `pip install pytest`
 
 In order to run the tests, be sure to initialize git:
 ```sh
