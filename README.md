@@ -10,10 +10,13 @@ To use it:
 ```sh
 pip install cookiecutter
 cookiecutter https://github.com/zarr-developers/cookiecutter-zarr-store
+```
+And answer the questions :smile:
+
+In order to run the tests, be sure to initialize git:
+```sh
 cd zarr-somethingshort
 git init
 pip install -e .
 pytest .
 ```
-
-And answer the questions :smile:
