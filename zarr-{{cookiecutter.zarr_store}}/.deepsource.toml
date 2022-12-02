@@ -1,0 +1,7 @@
+version = 1
+
+test_patterns = ["zarr_{{ cookiecutter.zarr_store}}/tests/test_*.py"]
+
+[[analyzers]]
+name = "python"
+enabled = true

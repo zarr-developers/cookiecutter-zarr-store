@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  build-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: test
+          python-version: 3.8
+          auto-activate-base: false
+      - name: Install Dependencies
+        shell: bash -l {0}
+        run: |
+          conda install -c conda-forge zarr flake8 black cookiecutter
+      - name: Generate Repository
+        shell: bash -l {0}
+        run: |
+          conda activate test
+          cookiecutter . --no-input
+          rm -Rf zarr-somethingshort/.github/workflows/
+      - name: Install Generated Repository Dependencies
+        shell: bash -l {0}
+        run: |
+          conda activate test
+          cd zarr-somethingshort
+          pip install -e .[all]
+      - name: Check code
+        shell: bash -l {0}
+        run: |
+          conda activate test
+          cd zarr-somethingshort
+          flake8 .
+          black --check .

@@ -1,0 +1,11 @@
+{
+  "zarr_store": "somethingshort",
+  "email": "zarrdevelopers@gmail.com",
+  "full_name": "Zarr Developers",
+  "github_username_or_organization": "zarr-developers",
+  "github_repository_url": "https://github.com/{{cookiecutter.github_username_or_organization}}/zarr-{{cookiecutter.zarr_store}}",
+  "short_description": "An example Zarr store implementation",
+  "version": "0.1.0.dev0",
+  "copyright_holder": "NumFOCUS",
+  "development_status": "2 - Pre-Alpha"
+}

@@ -1,0 +1,11 @@
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - wheel
+  - zarr
+  - pip
+  - pip:
+    - pytest
+    - pytest-timeout
+    - setuptools_scm

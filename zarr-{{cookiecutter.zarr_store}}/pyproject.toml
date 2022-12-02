@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=64.0.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zarr-{{ cookiecutter.zarr_store}}"
+description = "{{ cookiecutter.short_description }}"
+readme = { file = "README.md", content-type = "text/markdown" }
+maintainers = [
+    { name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    'zarr',
+]
+dynamic = [
+  "version",
+]
+classifiers = [
+    'Development Status :: {{cookiecutter.development_status}}',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Information Technology',
+    'Intended Audience :: Science/Research',
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+    'Operating System :: Unix',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+]
+license = { text = "MIT" }
+
+[project.urls]
+"Bug Tracker" = "https://github.com/{{ cookiecutter.github_username_or_organization }}/zarr-{{ cookiecutter.zarr_store}}/issues"
+Changelog = "https://zarr.readthedocs.io/en/stable/release.html"
+Discussions = "https://github.com/{{ cookiecutter.github_username_or_organization }}/zarr-{{ cookiecutter.zarr_store}}/discussions"
+Documentation = "https://zarr.readthedocs.io/"
+Homepage = "https://github.com/{{ cookiecutter.github_username_or_organization }}/zarr-{{ cookiecutter.zarr_store}}"
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "pragma: ${PY_MAJOR_VERSION} no cover",
+]
+
+[tool.coverage.run]
+omit = [
+]
+
+[tool.setuptools]
+packages = ["zarr_{{ cookiecutter.zarr_store}}", "zarr_{{ cookiecutter.zarr_store}}.tests"]
+license-files = ["LICENSE.txt"]
+
+[tool.setuptools_scm]
+version_scheme = "guess-next-dev"
+local_scheme = "dirty-tag"
+write_to = "zarr_{{ cookiecutter.zarr_store}}/version.py"
+
+[tool.mypy]
+python_version = "3.8"
+ignore_missing_imports = true
+follow_imports = "silent"
+
+[tool.pytest.ini_options]
+doctest_optionflags = [
+    "NORMALIZE_WHITESPACE",
+    "ELLIPSIS", 
+    "IGNORE_EXCEPTION_DETAIL",
+]
+addopts = [
+    "--durations=10",
+]
+filterwarnings = [
+    "error:::zarr_{{ cookiecutter.zarr_store}}.*",
+    "ignore:PY_SSIZE_T_CLEAN will be required.*:DeprecationWarning",
+    "ignore:The loop argument is deprecated since Python 3.8.*:DeprecationWarning",
+]
