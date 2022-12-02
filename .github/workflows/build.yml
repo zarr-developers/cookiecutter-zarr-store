@@ -33,6 +33,7 @@ jobs:
         run: |
           conda activate test
           cd zarr-somethingshort
+          git init
           pip install -e .[all]
       - name: Check code
         shell: bash -l {0}
