@@ -11,7 +11,10 @@ for creating your own Zarr store implementation.
 pip install cookiecutter
 cookiecutter https://github.com/zarr-developers/cookiecutter-zarr-store
 ```
-After launching above commands, you'll be see a few questions on your terminal. For the first question use the name of the store you want to work with. E.g. `zip_store` for Zip Store, `sqlite_store` for SQLitreStore, `mongodb_store` for MongoDBStore and so on.
+Running `cookiecutter` will print a few questions on your terminal.
+For the first question (`zarr_store`), use the name of the store
+you want to create. E.g. `zipstore` for Zip Store, `mongodb`
+for MongoDBStore and so on.
 
 For remaining questions use the value indicated in the `[ ]`. These are the default values set by the maintainers.
 
