@@ -10,6 +10,10 @@ To use it:
 ```sh
 pip install cookiecutter
 cookiecutter https://github.com/zarr-developers/cookiecutter-zarr-store
+cd zarr-somethingshort
+git init
+pip install -e .
+pytest .
 ```
 
 And answer the questions :smile:
