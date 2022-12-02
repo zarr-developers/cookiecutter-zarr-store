@@ -32,6 +32,7 @@ class Store(BaseStore):
         Keyword arguments passed through to the `redis.Redis` function.
 
     """
+
     def __init__(self, client=None, dimension_separator=None, **kwargs):
 
         # Import backend implementation here
@@ -76,9 +77,7 @@ class Store(BaseStore):
 
     def __setstate__(self, state):
         client, dimension_separator, kwargs = state
-        self.__init__(client=client,
-                      dimension_separator=dimension_separator,
-                      **kwargs)
+        self.__init__(client=client, dimension_separator=dimension_separator, **kwargs)
 
     def clear(self):
         for key in list(self.keys()):
