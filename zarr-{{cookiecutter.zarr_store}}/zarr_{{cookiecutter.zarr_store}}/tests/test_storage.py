@@ -1,5 +1,5 @@
 from zarr_{{ cookiecutter.zarr_store}}.storage import Store
-from zarr.tests.test_storage import StoreTests, dimension_separator_fixture
+from zarr.tests.test_storage import StoreTests, dimension_separator_fixture  # noqa
 
 
 class TestStore(StoreTests):
