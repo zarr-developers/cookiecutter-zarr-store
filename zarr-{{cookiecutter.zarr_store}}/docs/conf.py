@@ -228,8 +228,7 @@ htmlhelp_basename = "zarrdoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
-latex_elements = {
-}
+latex_elements = {}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
