@@ -5,7 +5,7 @@
 This repository offers a [cookiecutter](https://cookiecutter.readthedocs.io)
 for creating your own Zarr store implementation.
 
-### Setting up the repo
+### Creating a repo from the template
 
 ```sh
 pip install cookiecutter
