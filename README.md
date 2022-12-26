@@ -18,7 +18,7 @@ for MongoDBStore and so on.
 
 For remaining questions use the value indicated in the `[ ]`. These are the default values set by the maintainers.
 
-### Once you're done with above setup you can move to
+### Once you're done with above setup you can see examples at:
 
 - [storage.py](https://github.com/zarr-developers/zarr-python/blob/main/zarr/storage.py) and start separating the desired store's code and integrating into your repository under `zarr-something-short/storage.py`
 - Pick up corresponding tests from [tests_storage.py](https://github.com/zarr-developers/zarr-python/blob/main/zarr/tests/test_storage.py) and start adding them into your repository under `zarr-something-short/tests/tests_storage.py`
